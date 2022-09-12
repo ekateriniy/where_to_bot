@@ -3,4 +3,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "statics#index"
+
+  telegram_webhook Api::WebhooksController
 end

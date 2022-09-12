@@ -30,4 +30,6 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  telegram:
+    hello: 'Hi! This is a bot which can make your choice of restaurants simplier'
+    not_a_location: 'Seems like it is not a location. Please try again'
