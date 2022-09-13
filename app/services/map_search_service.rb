@@ -10,8 +10,10 @@ class MapSearchService
   end
 
   def call
-    make_request
-    json_result
+    result = make_request
+    json_result(result)
+  rescue StandardError
+    false
   end
 
   private
@@ -25,10 +27,10 @@ class MapSearchService
     https.use_ssl = true
 
     request = Net::HTTP::Get.new(url)
-    @response = https.request(request).read_body
+    https.request(request).read_body
   end
 
-  def json_result
-    @result.merge(JSON.parse(@response))
+  def json_result(request_result)
+    @result.merge(JSON.parse(request_result))
   end
 end

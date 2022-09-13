@@ -15,6 +15,8 @@ class Api::WebhooksController < Telegram::Bot::UpdatesController
   private
 
   def response_message
+    return t('telegram.http_error') unless @response
+    
     # select first 5 places, since they are already sorted in gmaps by prominence
     result = ""
     @response['results'][0..4].each_with_index do |res, i|
