@@ -12,7 +12,8 @@ class MapSearchService
   def call
     result = make_request
     json_result(result)
-  rescue StandardError
+  rescue StandardError => e
+    Rails.logger.error e.message
     false
   end
 
