@@ -24,6 +24,7 @@ class MapSearchService
       search_result = json_result(result)
       break if search_result['status'] != "ZERO_RESULTS"
       @radius *= 2
+      search_result = false
     end
 
     search_result
