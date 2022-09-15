@@ -12,7 +12,8 @@ class MapSearchService
 
   def call
     search_cycle
-  rescue StandardError
+  rescue StandardError => e
+    Rails.logger.error e.message
     false
   end
 
